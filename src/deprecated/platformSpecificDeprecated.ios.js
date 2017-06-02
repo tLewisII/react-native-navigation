@@ -139,9 +139,9 @@ function startSingleScreenApp(params) {
         return (
           <DrawerControllerIOS id={navigatorID}
                                componentLeft={params.drawer.left ? params.drawer.left.screen : undefined}
-                               passPropsLeft={{navigatorID: navigatorID}}
+                               passPropsLeft={{...params.drawer.left.passProps, navigatorID: navigatorID}}
                                componentRight={params.drawer.right ? params.drawer.right.screen : undefined}
-                               passPropsRight={{navigatorID: navigatorID}}
+                               passPropsRight={...params.drawer.right.passProps, navigatorID: navigatorID}}
                                disableOpenGesture={params.drawer.disableOpenGesture}
                                type={params.drawer.type ? params.drawer.type : 'MMDrawer'}
                                animationType={params.drawer.animationType ? params.drawer.animationType : 'slide'}
